@@ -139,7 +139,7 @@ function installWireGuard() {
 			wget https://github.com/svishnevskii/befuture_vpn_tg_bot/archive/refs/heads/master.zip
 			unzip master.zip
 			rm master.zip
-			pip install -r "$(pwd)/BefutureVPN/requirements.txt"
+			pip install -r "$(pwd)/befuture_vpn_tg_bot/requirements.txt"
 			echo "{
 \"admin_tg_id\": ${ADMIN_ID_BOT},
 \"one_month_cost\": 120,
@@ -147,8 +147,8 @@ function installWireGuard() {
 \"UTC_time\": 3,
 \"tg_token\": \"${API_TOKEN_BOT}\",
 \"tg_shop_token\": \"${API_PAYMENT_BOT}\"
-}" >"$(pwd)/BefutureVPN/config.json"
-			chmod 744 -R $(pwd)/BefutureVPN/
+}" >"$(pwd)/befuture_vpn_tg_bot/config.json"
+			chmod 744 -R $(pwd)/befuture_vpn_tg_bot/
 			echo "[Unit]
 Description=Admin Bot for Wireguard
 After=multi-user.target
@@ -157,8 +157,8 @@ After=multi-user.target
 Type=simple
 Restart=always
 RestartSec=15
-WorkingDirectory=$(pwd)/BefutureVPN
-ExecStart=/usr/bin/python3 $(pwd)/BefutureVPN/main.py
+WorkingDirectory=$(pwd)/befuture_vpn_tg_bot
+ExecStart=/usr/bin/python3 $(pwd)/befuture_vpn_tg_bot/main.py
 User=root
 
 [Install]
