@@ -136,7 +136,7 @@ function installWireGuard() {
 		if [[ ${BOT_AUTO_INSTALL} == '1' ]]; then
 			apt-get install unzip
 			apt-get install python3-pip -y
-			wget https://github.com/befuture_vpn_tg_bot/BefutureVPN/archive/refs/heads/master.zip
+			wget https://github.com/svishnevskii/befuture_vpn_tg_bot/archive/refs/heads/master.zip
 			unzip master.zip
 			rm master.zip
 			pip install -r "$(pwd)/BefutureVPN/requirements.txt"
